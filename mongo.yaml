@@ -30,6 +30,13 @@ spec:
             secretKeyRef:
               name: mongo-secret
               key: mongo-password
+        volumeMounts:
+          - name: secret-volume
+            mountPath: /run/secrets
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: my-secret
 ---
 apiVersion: v1
 kind: Service
