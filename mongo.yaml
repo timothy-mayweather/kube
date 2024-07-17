@@ -33,6 +33,7 @@ spec:
         volumeMounts:
           - name: secret-volume
             mountPath: /run/secrets
+            readOnly: true
       volumes:
         - name: secret-volume
           secret:
